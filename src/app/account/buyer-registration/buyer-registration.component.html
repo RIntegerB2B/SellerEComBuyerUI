@@ -1,0 +1,120 @@
+<form [formGroup]="buyerRegisterForm" (ngSubmit)="registerSubmit(buyerRegisterForm)" novalidate>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-6 mx-auto">
+              <div class="">
+                      <div class="form-group">
+                          <input class="form-control required" required placeholder="First Name" formControlName="firstName" type="text">
+                            <div *ngIf="buyerRegisterForm.controls['firstName'].errors
+                             && !buyerRegisterForm.controls['firstName'].pristine" class="alert alert-danger">
+                                <div [hidden]="!buyerRegisterForm.controls['firstName'].errors.required">First Name is required.</div>
+                              </div>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control required" required placeholder="Middle Name" formControlName="middleName" type="text">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control required" required placeholder="Last Name" formControlName="lastName" type="text">
+                          <div *ngIf="buyerRegisterForm.controls['lastName'].errors
+                           && !buyerRegisterForm.controls['lastName'].pristine" class="alert alert-danger">
+                              <div [hidden]="!buyerRegisterForm.controls['lastName'].errors.required">
+                                  Last Name is required.
+                                </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control required" required placeholder="Email Id" formControlName="emailId" type="text">
+                          <div *ngIf="buyerRegisterForm.controls['emailId'].errors
+                           && !buyerRegisterForm.controls['emailId'].pristine" class="alert alert-danger">
+                              <div [hidden]="!buyerRegisterForm.controls['emailId'].errors.required">
+                                  Please enter Email Id
+                                </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control required" required placeholder="Phone Number" formControlName="phoneNumber" type="text">
+                          <div *ngIf="buyerRegisterForm.controls['phoneNumber'].errors
+                           && !buyerRegisterForm.controls['phoneNumber'].pristine" class="alert alert-danger">
+                              <div [hidden]="!buyerRegisterForm.controls['phoneNumber'].errors.required">
+                                  Please enter Phone Number
+								           </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control required" required placeholder="Billing Address" formControlName="billingAddress" type="text">
+                          <div *ngIf="buyerRegisterForm.controls['billingAddress'].errors
+                           && !buyerRegisterForm.controls['billingAddress'].pristine" class="alert alert-danger">
+                              <div [hidden]="!buyerRegisterForm.controls['billingAddress'].errors.required">
+                                  Please enter Billing Address
+								          </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control required" required placeholder="Shipping Address" formControlName="shippingAddress" type="text">
+                          <div *ngIf="buyerRegisterForm.controls['shippingAddress'].errors
+                           && !buyerRegisterForm.controls['shippingAddress'].pristine" class="alert alert-danger">
+                              <div [hidden]="!buyerRegisterForm.controls['shippingAddress'].errors.required">
+                                  Please enter Billing Address
+								          </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control required" required placeholder="User NAme" formControlName="userName" type="text">
+                          <div *ngIf="buyerRegisterForm.controls['userName'].errors
+                           && !buyerRegisterForm.controls['userName'].pristine" class="alert alert-danger">
+                              <div [hidden]="!buyerRegisterForm.controls['userName'].errors.required">
+                                  Please enter User Name 
+								          </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control required" required placeholder="Password" formControlName="password" type="password">
+                          <div *ngIf="buyerRegisterForm.controls['password'].errors
+                           && !buyerRegisterForm.controls['password'].pristine" class="alert alert-danger">
+                              <div [hidden]="!buyerRegisterForm.controls['password'].errors.required">
+                                  Please enter Password
+								  </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control required" required placeholder="Security Question" formControlName="securityQuestion" type="text">
+                          <div *ngIf="buyerRegisterForm.controls['securityQuestion'].errors
+                           && !buyerRegisterForm.controls['securityQuestion'].pristine" class="alert alert-danger">
+                              <div [hidden]="!buyerRegisterForm.controls['securityQuestion'].errors.required">
+                                  Please enter Security Question
+								          </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control required" required placeholder="Security Answer" formControlName="securityAnswer" type="text">
+                          <div *ngIf="buyerRegisterForm.controls['securityAnswer'].errors
+                           && !buyerRegisterForm.controls['securityAnswer'].pristine" class="alert alert-danger">
+                              <div [hidden]="!buyerRegisterForm.controls['securityAnswer'].errors.required">
+                                  Please enter Security Answer
+								          </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control required" required placeholder="City" formControlName="city" type="text">
+                          <div *ngIf="buyerRegisterForm.controls['city'].errors
+                           && !buyerRegisterForm.controls['city'].pristine" class="alert alert-danger">
+                              <div [hidden]="!buyerRegisterForm.controls['city'].errors.required">
+                                  Please enter City
+								          </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control required" required placeholder="State" formControlName="state" type="text">
+                          <div *ngIf="buyerRegisterForm.controls['state'].errors
+                           && !buyerRegisterForm.controls['state'].pristine" class="alert alert-danger">
+                              <div [hidden]="!buyerRegisterForm.controls['state'].errors.required">
+                                  Please enter State
+								          </div>
+                          </div>
+                      </div>
+                      <input class="btn btn-primary btn-block" value="Sign Up" type="submit" [disabled]='!buyerRegisterForm.valid'>
+              </div>
+      </div>
+  </div>
+</div>
+</form>
