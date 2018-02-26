@@ -15,6 +15,11 @@ import { HeaderComponent } from './shared/header/header.component';
 import { NavHeaderComponent } from './shared/nav-header/nav-header.component';
 import { Routing } from './app.routes';
 import { WelcomeComponent } from './home/welcome/welcome.component';
+import { ContentViewComponent } from './content/content-view/content-view.component';
+import {ContentService} from './content/content.service';
+import { ContentDetailComponent } from './content/content-detail/content-detail.component';
+import { ImgListComponent } from './shared/img-list/img-list.component';
+import { NavHeaderService } from "./shared/nav-header/nav-header.service";
 
 
 @NgModule({
@@ -25,7 +30,10 @@ import { WelcomeComponent } from './home/welcome/welcome.component';
     BuyerSigninComponent,
     HeaderComponent,
     NavHeaderComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ContentViewComponent,
+    ContentDetailComponent,
+    ImgListComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +42,11 @@ import { WelcomeComponent } from './home/welcome/welcome.component';
     RouterModule,
     Routing
   ],
-  providers: [AccountService],
+  providers: [
+    AccountService,
+    ContentService,
+    NavHeaderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

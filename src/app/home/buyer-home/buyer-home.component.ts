@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavHeaderService } from '../../shared/nav-header/nav-header.service';
 
 @Component({
   selector: 'app-buyer-home',
@@ -8,9 +9,10 @@ import { Router } from '@angular/router';
 })
 export class BuyerHomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private nav : NavHeaderService) { }
 
   ngOnInit() {
+    this.nav.hide();
   }
 
   navigateToSignUp(): void {

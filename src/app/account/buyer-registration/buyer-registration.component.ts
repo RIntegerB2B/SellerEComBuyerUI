@@ -1,7 +1,9 @@
 import { Component,OnInit, Input, OnChanges }                   from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators , NgForm} from '@angular/forms';
 import {Registration} from './buyer-registration.model';
-import {AccountService} from '../account.service'
+import {AccountService} from '../account.service';
+import { Router } from '@angular/router';
+import { NavHeaderService } from '../../shared/nav-header/nav-header.service';
  
 @Component({
   selector: 'app-buyer-registration',
@@ -10,9 +12,10 @@ import {AccountService} from '../account.service'
 })
 export class BuyerRegistrationComponent implements OnInit {
   buyerRegisterForm: FormGroup;
-  constructor(private fb: FormBuilder, private accountService : AccountService) { }
+  constructor(private fb: FormBuilder, private accountService : AccountService,private router: Router, private nav : NavHeaderService) { }
   registrationModel : Registration;
   ngOnInit() {
+    this.nav.hide();
     this.createForm();
   }
   createForm() {
@@ -54,6 +57,7 @@ export class BuyerRegistrationComponent implements OnInit {
 
     this.accountService.registerBuyer(this.registrationModel).subscribe(data => {
               console.log(data);
+              this.router.navigate(['/BuyerHomeComponent']);
     }, error => {
       console.log(error);
     });

@@ -11,9 +11,9 @@ import {AppSetting}  from '../config/appSetting';
 
 @Injectable()
 export class AccountService {
-  serviceUrl: string = AppSetting.local3010BuyerServiceUrl;
+  serviceUrl: string = AppSetting.awsServiceUrl;
   handleError(arg0: any): any {
-    return false;
+    console.log(arg0);
   }
   constructor(private http: Http) { }
 
