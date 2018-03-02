@@ -23,11 +23,26 @@ export class ContentDetailComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getContentDetail();
+    this.getAllConents();
   }
 
   getContentDetail(): void {
     this.contentService.getContentDetail(this.publishId).subscribe(contDetail =>
+      { 
+        this.contentDetail = contDetail; 
+        console.log(this.contentDetail);
+      },
+      error => {
+        this.errorMessage = <any>error;
+        console.log(this.errorMessage);
+      }
+    
+    );
+    // console.log(this.patientInfo[0].LastName);
+  }
+
+  getAllConents(): void {
+    this.contentService.getAllContents().subscribe(contDetail =>
       { 
         this.contentDetail = contDetail; 
         console.log(this.contentDetail);

@@ -2,3 +2,59 @@
 <div style="background-color: white; margin : 0.5% 1%; padding : 0.5% 1% ; border-radius: 2px ">
   <router-outlet></router-outlet>
 </div>
+
+<div class="container-fluid fixed-bottom" style="background-color: white; text-align: center">
+    <div class="row">
+  <div class="col-2 col-xs-2 col-sm-2  col-xl-2">
+      <div>
+            <i class="fa fa-viacoin "></i>
+      </div>
+      <div>
+            <a class="navbar-brand" [routerLink]="['/ContentDetail']">For You</a>
+      </div>
+        
+      
+      
+  </div>
+  <div class="col-2 col-xs-2 col-sm-2 col-xl-2">
+      <div>
+            <i class="fa fa-globe "></i>
+      </div>
+        <div>
+                <a class="navbar-brand" [routerLink]="['/CollectionView']">Collections</a>
+        </div>
+      
+      
+  </div>
+  <div class="col-2 col-xs-2 col-sm-2 col-xl-2">
+      <div>
+            <i class="fa fa-shopping-cart "></i>
+      </div>
+      <div>
+            <a class="navbar-brand" [routerLink]="['/CartView']">Cart</a>
+      </div>
+     
+     
+  </div>
+  <div class="col-2 col-xs-2 col-sm-2 col-xl-2">
+      <div>
+            <i class="fa fa-first-order "></i>
+      </div>
+      <div>
+            <a class="navbar-brand" [routerLink]="['/OrderView']">Order</a>
+      </div>
+      
+     
+  </div>
+  <div class="col-2 col-xs-2 col-sm-2 col-xl-2">
+    <div>
+            <i class="fa fa-user "></i>
+    </div>
+    <div>
+            <a class="navbar-brand" [routerLink]="['/AccountView']">Account</a>
+    </div>
+    
+    
+</div>
+  </div>
+</div>

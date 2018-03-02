@@ -14,3 +14,23 @@ body {
 .ng-invalid:not(form)  {
   border-left: 5px solid #a94442; /* red */
 }
+
+.spaceAround{
+  margin:2%;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand{font-size: 10px;}
+}
+
+@media (max-width: 2576px) {
+  .navbar-brand{font-size: 14px;}
+}
+
+.pull-right{
+  padding-top: 5px;
+}
+
+.pull-left{
+  padding-top: 5px;
+}

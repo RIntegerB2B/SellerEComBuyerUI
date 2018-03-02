@@ -34,5 +34,12 @@ export class ContentService {
       .do((x) => console.log(x)).catch((e) => this.handleError(e));
   }
 
+  getAllContents() :Observable<any>{
+
+    return this.http.get(this.serviceUrl + "contentData")
+      .map((response : Response) => <any>response.json())
+      .do((x) => console.log(x)).catch((e) => this.handleError(e));
+  }
+
   
 }

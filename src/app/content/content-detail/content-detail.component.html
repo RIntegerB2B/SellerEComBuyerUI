@@ -1,5 +1,20 @@
 <div *ngFor = "let content of contentDetail" class="container">
+    <div class="row spaceAround">
   <div class="col-xs-12 col-xl-12">
-          <img class="img-responsive col-xs-12 col-xl-12" [src]="content.contentData">
+          <img class="img-responsive col-xs-12 col-xl-12" style="height:310px" [src]="content.contentData">
   </div>
+  </div>
+  <div class="row spaceAround">
+    <div class="col-5 col-xs-5 col-xl-5 text-center spaceAround">
+            <button class="btn btn-primary " (click)="approveBuyer(buyer._id)">
+                    VIEW PRODUCTS
+                </button>
+    </div>
+    <div class="col-5 col-xs-5 col-xl-5 col-lg-5 text-center spaceAround">
+      <button class="btn btn-primary " (click)="approveBuyer(buyer._id)">
+        <i class="fa fa-whatsapp pull-left "></i> SHARE
+    </button>
+        </div>
 </div>
+</div>
+  

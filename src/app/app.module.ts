@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 import { AppComponent } from './app.component';
@@ -20,6 +21,10 @@ import {ContentService} from './content/content.service';
 import { ContentDetailComponent } from './content/content-detail/content-detail.component';
 import { ImgListComponent } from './shared/img-list/img-list.component';
 import { NavHeaderService } from "./shared/nav-header/nav-header.service";
+import { CollectionViewComponent } from './collection/collection-view/collection-view.component';
+import { CartViewComponent } from './cart/cart-view/cart-view.component';
+import { OrderViewComponent } from './order/order-view/order-view.component';
+import { AccountViewComponent } from './account/account-view/account-view.component';
 
 
 @NgModule({
@@ -33,14 +38,19 @@ import { NavHeaderService } from "./shared/nav-header/nav-header.service";
     WelcomeComponent,
     ContentViewComponent,
     ContentDetailComponent,
-    ImgListComponent
+    ImgListComponent,
+    CollectionViewComponent,
+    CartViewComponent,
+    OrderViewComponent,
+    AccountViewComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
     RouterModule,
-    Routing
+    Routing,
+    AngularFontAwesomeModule
   ],
   providers: [
     AccountService,
