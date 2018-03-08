@@ -1,0 +1,24 @@
+html,
+body {
+  height: 100%;
+  
+}
+.headerStyle{
+   color:white;font-size:14px;font-weight: bold;
+}
+
+.spaceAround{
+  margin:2%;
+}
+
+.headerFilterCategory{
+  width:50%;
+  background-color: #0066ff0f;
+}
+
+.headerFilterAll{
+  width:50%;
+  background-color: #0707fd0d;
+}
+
+

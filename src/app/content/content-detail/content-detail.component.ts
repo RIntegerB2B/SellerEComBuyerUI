@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {IContentDetail} from '../models/contentDetail.model';
 import {ContentService} from '../content.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-content-detail',
@@ -13,7 +14,8 @@ export class ContentDetailComponent implements OnInit {
   publishId : number;
   errorMessage: any;
   contentDetail : IContentDetail;
-  constructor(private route: ActivatedRoute, private contentService : ContentService) { 
+  contentDetailList : IContentDetail[];
+  constructor(private route: ActivatedRoute, private contentService : ContentService, private router: Router) { 
     this.route.params.subscribe( params => {
       console.log(params);
       this.publishId = params.publishId;
@@ -23,7 +25,7 @@ export class ContentDetailComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getAllConents();
+    this.getAllContents();
   }
 
   getContentDetail(): void {
@@ -41,11 +43,27 @@ export class ContentDetailComponent implements OnInit {
     // console.log(this.patientInfo[0].LastName);
   }
 
-  getAllConents(): void {
-    this.contentService.getAllContents().subscribe(contDetail =>
+  getAllContents(): void {
+    var self=this;
+    this.contentService.getAllContentId().subscribe(contDetail =>
       { 
-        this.contentDetail = contDetail; 
-        console.log(this.contentDetail);
+        self.contentDetailList = contDetail; 
+        self.contentDetailList.forEach(function(cont:IContentDetail){
+          self.contentService.getMainContentImage(cont._id).subscribe(imageContent =>
+            { 
+              for(var i=0;i<self.contentDetailList.length;i++){
+                if(self.contentDetailList[i]._id==cont._id){
+                  self.contentDetailList[i].mainContentImage=imageContent.mainContentImage;
+                }
+              }
+            },
+            error => {
+              console.log(<any>error);
+            }
+          
+          );
+        });
+        console.log(self.contentDetail);
       },
       error => {
         this.errorMessage = <any>error;
@@ -54,6 +72,10 @@ export class ContentDetailComponent implements OnInit {
     
     );
     // console.log(this.patientInfo[0].LastName);
+  }
+
+  navigateToSubContent(selectedMainContentId){
+    this.router.navigate(['/SubContent', selectedMainContentId]);
   }
 
 

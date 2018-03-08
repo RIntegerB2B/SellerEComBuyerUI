@@ -25,6 +25,7 @@ import { CollectionViewComponent } from './collection/collection-view/collection
 import { CartViewComponent } from './cart/cart-view/cart-view.component';
 import { OrderViewComponent } from './order/order-view/order-view.component';
 import { AccountViewComponent } from './account/account-view/account-view.component';
+import { SubContentViewComponent } from './content/sub-content-view/sub-content-view.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { AccountViewComponent } from './account/account-view/account-view.compon
     CollectionViewComponent,
     CartViewComponent,
     OrderViewComponent,
-    AccountViewComponent
+    AccountViewComponent,
+    SubContentViewComponent
   ],
   imports: [
     BrowserModule,

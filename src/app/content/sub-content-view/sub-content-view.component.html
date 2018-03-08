@@ -1,0 +1,20 @@
+<div *ngFor = "let subContent of subContentList" class="container">
+  <div class="row spaceAround">
+    <div class="col-xs-12 col-xl-12" *ngIf="subContent.subContentDetailImage">
+            <img class="img-responsive col-xs-12 col-xl-12" style="height:310px" [src]="subContent.subContentDetailImage">
+    </div>
+  </div>
+  <div class="row spaceAround" *ngIf="subContent.subContentDetailImage">
+    <div class="col-5 col-xs-5 col-xl-5 text-center spaceAround">
+            <button class="btn btn-primary " (click)="approveBuyer()">
+                    VIEW DETAIL
+                </button>
+    </div>
+    <div class="col-5 col-xs-5 col-xl-5 col-lg-5 text-center spaceAround">
+      <button class="btn btn-primary " (click)="approveBuyer()">
+        <i class="fa fa-whatsapp pull-left "></i> SHARE
+      </button>
+    </div>
+  </div>
+</div>
+

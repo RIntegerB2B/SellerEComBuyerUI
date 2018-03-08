@@ -34,12 +34,31 @@ export class ContentService {
       .do((x) => console.log(x)).catch((e) => this.handleError(e));
   }
 
-  getAllContents() :Observable<any>{
+  getAllContentId() :Observable<any>{
 
-    return this.http.get(this.serviceUrl + "contentData")
+    return this.http.get(this.serviceUrl + "contentId")
       .map((response : Response) => <any>response.json())
       .do((x) => console.log(x)).catch((e) => this.handleError(e));
   }
 
-  
+  getMainContentImage(id:number) :Observable<any>{
+
+    return this.http.get(this.serviceUrl + "content/" + id)
+      .map((response : Response) => <any>response.json())
+      .do((x) => console.log(x)).catch((e) => this.handleError(e));
+  }
+
+  getAllSubContentId(mainContentId : number) :Observable<any>{
+
+    return this.http.get(this.serviceUrl + "subContentId/" + mainContentId)
+      .map((response : Response) => <any>response.json())
+      .do((x) => console.log(x)).catch((e) => this.handleError(e));
+  }
+
+  getSubContentImage(mainContentId:number, subContentId: number) :Observable<any>{
+
+    return this.http.get(this.serviceUrl + "content/" + mainContentId + "/" + subContentId)
+      .map((response : Response) => <any>response.json())
+      .do((x) => console.log(x)).catch((e) => this.handleError(e));
+  }
 }

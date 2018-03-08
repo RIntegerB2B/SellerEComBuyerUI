@@ -1,36 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "./angularStyle.css";
+@import "./bootstrapOverride.css";
+@import "./customStyle.css";
 
-html,
-body {
-  height: 100%;
-  
-}
 
-.ng-valid.required {
-  border-left: 5px solid #42A948; /* green */
-}
-
-.ng-invalid:not(form)  {
-  border-left: 5px solid #a94442; /* red */
-}
-
-.spaceAround{
-  margin:2%;
-}
-
-@media (max-width: 576px) {
-  .navbar-brand{font-size: 10px;}
-}
-
-@media (max-width: 2576px) {
-  .navbar-brand{font-size: 14px;}
-}
-
-.pull-right{
-  padding-top: 5px;
-}
-
-.pull-left{
-  padding-top: 5px;
-}

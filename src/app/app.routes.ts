@@ -9,6 +9,7 @@ import { CartViewComponent } from './cart/cart-view/cart-view.component';
 import { OrderViewComponent } from './order/order-view/order-view.component';
 import { AccountViewComponent } from './account/account-view/account-view.component';
 import { CollectionViewComponent } from './collection/collection-view/collection-view.component';
+import { SubContentViewComponent } from './content/sub-content-view/sub-content-view.component';
 
 const routes: Routes = [
     { path: 'BuyerHomeComponent', component: BuyerHomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
     { path: 'Welcome', component: WelcomeComponent },
     { path: 'ContentView', component: ContentViewComponent },
     { path: 'ContentDetail', component: ContentDetailComponent },
+    { path: 'SubContent/:mainContentId', component: SubContentViewComponent },
     { path: 'CartView', component: CartViewComponent },
     { path: 'OrderView', component: OrderViewComponent },
     { path: 'AccountView', component: AccountViewComponent },

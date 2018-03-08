@@ -1,22 +1,40 @@
 
-<div style=" padding: 0.5% 1%" *ngIf="nav.visible">
-    <div class="csNavBarHeader" style="background-color: white">
-    <nav class="navbar navbar-expand-lg navbar-light">
+
+<div  *ngIf="nav.visible" >
+  <div *ngIf="!this.searchVisible" class="row spaceAround headerStyle" style="background-color: #007bff; ">
+    <div class="col-6">
         <a class="navbar-brand csNavFont" [routerLink]="['/Welcome']">Seller ECom</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    </div>
+    <div class="col-6">
+            <i class="fa fa-search pull-right" (click)="showSearch()"></i> 
+      </div>
+  </div>
+  <div *ngIf="this.searchVisible" class="input-group">
+      <i class="fa fa-arrow-left pull-left" (click)="hideSearch()"></i> 
+      <input type="text" class="form-control" placeholder="Search" />
+    </div>    
+     
+  
+    <div class="csNavBarHeader" style="background-color: white">
+    <nav class="navbar navbar-expand-lg">
+      <button class="navbar-toggler headerFilterCategory" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>Filter By Category
+      </button>
+      <button class="navbar-toggler headerFilterAll" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>All
+      </button>
       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/ContentView']">
+                  <span class="csNavFont">Content View</span>
+              </a>
+          </li>
             
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/ContentView']">
-                    <span class="csNavFont">Content View</span>
-                </a>
-            </li>
-            	
-          </ul>     
-        </div>
+        </ul>     
+      </div>
       </nav>
+</div>
 </div>

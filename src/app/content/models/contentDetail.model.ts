@@ -1,13 +1,11 @@
 export interface IContentDetail {
-    contentId: Number;
-    contentData: string;
-    fileName: String;
-    contentDescription: String;
-    clientId: Number;
-    contentFileName:String;
+    _id:number;
     createdDate: Date;
-    encryptedKey:String;
-    contentDetailId: Number;
-    contentDetailDescription:String;
-    publishId: Number;
+  contentDescription: string;
+  encryptedKey:string;
+  mainContentImage: string;
+  mainContentDescription:string;
+  mainContentName:string;
+  mainContentFileName:string;
+  
 }
