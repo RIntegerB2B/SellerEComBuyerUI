@@ -5,53 +5,53 @@
 
 <div class="container-fluid fixed-bottom" style="background-color: white; text-align: center">
     <div class="row">
-  <div class="col-2 col-xs-2 col-sm-2  col-xl-2">
+  <div class="col-2 col-xs-2 col-sm-2  col-xl-2" (click) = "navigateToPage('/ContentDetail')">
       <div>
             <i class="fa fa-viacoin "></i>
       </div>
       <div>
-            <a class="navbar-brand" [routerLink]="['/ContentDetail']">For You</a>
+            <a class="navbar-brand" >For You</a>
       </div>
         
       
       
   </div>
-  <div class="col-3 col-xs-3 col-sm-3 col-xl-3">
+  <div class="col-3 col-xs-3 col-sm-3 col-xl-3" (click) = "navigateToPage('/CollectionView')">
       <div>
             <i class="fa fa-globe "></i>
       </div>
         <div>
-                <a class="navbar-brand" [routerLink]="['/CollectionView']">Collections</a>
+                <a class="navbar-brand" >Collections</a>
         </div>
       
       
   </div>
-  <div class="col-2 col-xs-2 col-sm-2 col-xl-2">
+  <div class="col-2 col-xs-2 col-sm-2 col-xl-2" (click) = "navigateToPage('/CartView')">
       <div>
             <i class="fa fa-shopping-cart "></i>
       </div>
       <div>
-            <a class="navbar-brand" [routerLink]="['/CartView']">Cart</a>
+            <a class="navbar-brand" >Cart</a>
       </div>
      
      
   </div>
-  <div class="col-2 col-xs-2 col-sm-2 col-xl-2">
+  <div class="col-2 col-xs-2 col-sm-2 col-xl-2" (click) = "navigateToPage('/OrderView')">
       <div>
             <i class="fa fa-first-order "></i>
       </div>
       <div>
-            <a class="navbar-brand" [routerLink]="['/OrderView']">Order</a>
+            <a class="navbar-brand" >Order</a>
       </div>
       
      
   </div>
-  <div class="col-2 col-xs-2 col-sm-2 col-xl-2">
+  <div class="col-3 col-xs-3 col-sm-3 col-xl-3" (click) = "navigateToPage('/AccountView')">
     <div>
             <i class="fa fa-user "></i>
     </div>
     <div>
-            <a class="navbar-brand" [routerLink]="['/AccountView']">Account</a>
+            <a class="navbar-brand" >Account</a>
     </div>
     
     
