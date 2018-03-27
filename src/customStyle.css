@@ -4,7 +4,10 @@ body {
   
 }
 .headerStyle{
-   color:white;font-size:14px;font-weight: bold;
+   color:white;
+   font-size:14px;
+   font-weight: bold;
+   background-color: #007bff;
 }
 
 .spaceAround{

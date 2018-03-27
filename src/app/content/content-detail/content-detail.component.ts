@@ -15,7 +15,8 @@ export class ContentDetailComponent implements OnInit {
   errorMessage: any;
   contentDetail : IContentDetail;
   contentDetailList : IContentDetail[];
-  constructor(private route: ActivatedRoute, private contentService : ContentService, private router: Router) { 
+  facebookShareUrl:string;
+  constructor(private route: ActivatedRoute, private contentService : ContentService, private router: Router ) { 
     this.route.params.subscribe( params => {
       console.log(params);
       this.publishId = params.publishId;
@@ -78,5 +79,9 @@ export class ContentDetailComponent implements OnInit {
     this.router.navigate(['/SubContent', selectedMainContentId]);
   }
 
+  shareContent(selectedMainContentId){
+    this.facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + window.location.href;
+    window.location.href=this.facebookShareUrl;
+  }
 
 }

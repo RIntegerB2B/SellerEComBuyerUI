@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
+import { HttpClientModule, HttpClientJsonpModule  } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { BuyerRegistrationComponent } from './account/buyer-registration/buyer-registration.component';
@@ -26,6 +28,7 @@ import { CartViewComponent } from './cart/cart-view/cart-view.component';
 import { OrderViewComponent } from './order/order-view/order-view.component';
 import { AccountViewComponent } from './account/account-view/account-view.component';
 import { SubContentViewComponent } from './content/sub-content-view/sub-content-view.component';
+import { ShareModule } from '@ngx-share/core';
 
 
 @NgModule({
@@ -52,7 +55,10 @@ import { SubContentViewComponent } from './content/sub-content-view/sub-content-
     HttpModule,
     RouterModule,
     Routing,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HttpClientModule,      // (Required) for share counts
+    HttpClientJsonpModule, // (Optional) For Tumblr counts
+    ShareModule.forRoot()
   ],
   providers: [
     AccountService,

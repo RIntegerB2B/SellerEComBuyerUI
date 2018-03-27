@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NavHeaderService} from './nav-header.service';
+import{Category} from './category.model';
 
 @Component({
   selector: 'app-nav-header',
@@ -8,10 +9,12 @@ import {NavHeaderService} from './nav-header.service';
 })
 export class NavHeaderComponent implements OnInit {
   searchVisible: boolean = false;
-  constructor(public nav : NavHeaderService) { }
+  categories:Category[];
+  constructor(public nav : NavHeaderService, ) { }
 
   ngOnInit() {
     this.nav.show();
+    this.getCategories();
   }
 
   showSearch() :void{
@@ -21,5 +24,16 @@ export class NavHeaderComponent implements OnInit {
     this.searchVisible = false;
   }
   
+  getCategories(): void {
+    this.nav.getCategories().subscribe(cats =>
+      { 
+        this.categories = cats; 
+        console.log(this.categories);
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 
 }

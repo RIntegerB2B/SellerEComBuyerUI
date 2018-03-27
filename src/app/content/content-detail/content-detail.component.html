@@ -1,20 +1,21 @@
-<div *ngFor = "let content of contentDetailList" class="container">
-    <div class="row spaceAround">
-  <div class="col-xs-12 col-xl-12" *ngIf="content.mainContentImage">
-          <img class="img-responsive col-xs-12 col-xl-12" style="height:310px" [src]="content.mainContentImage">
-  </div>
-  </div>
-  <div class="row spaceAround" *ngIf="content.mainContentImage">
-    <div class="col-5 col-xs-5 col-xl-5 text-center spaceAround">
-            <button class="btn btn-primary " (click)="navigateToSubContent(content._id)">
-                    VIEW PRODUCTS
-                </button>
-    </div>
-    <div class="col-5 col-xs-5 col-xl-5 col-lg-5 text-center spaceAround">
-      <button class="btn btn-primary " (click)="approveBuyer(buyer._id)">
-        <i class="fa fa-whatsapp pull-left "></i> SHARE
-    </button>
+<div *ngFor="let content of contentDetailList" class="container-fluid">
+        <div class="row spaceAround">
+                <div class="col-xs-12 col-xl-3" *ngIf="content.mainContentImage">
+                        <img (click)="navigateToSubContent(content._id)" class="img-responsive " style="height:310px" [src]="content.mainContentImage">
+                        <div class="col-6 col-xs-6 col-xl-3 ">
+                                <button class="btn btn-primary " (click)="navigateToSubContent(content._id)">
+                                        VIEW PRODUCTS
+                                </button>
+                        </div>
+                        <div class=" ">
+                                               
+                                </div>
+                        <div class=" ">
+                                <button class="btn btn-primary " (click)="shareContent(content._id)">
+                                         SHARE
+                                </button>
+                        </div>
+                </div>
         </div>
+     
 </div>
-</div>
-  

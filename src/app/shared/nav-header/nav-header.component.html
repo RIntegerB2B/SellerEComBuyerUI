@@ -1,40 +1,22 @@
-
-
-<div  *ngIf="nav.visible" >
-  <div *ngIf="!this.searchVisible" class="row spaceAround headerStyle" style="background-color: #007bff; ">
-    <div class="col-6">
-        <a class="navbar-brand csNavFont" [routerLink]="['/Welcome']">Seller ECom</a>
-    </div>
-    <div class="col-6">
-            <i class="fa fa-search pull-right" (click)="showSearch()"></i> 
-      </div>
-  </div>
-  <div *ngIf="this.searchVisible" class="input-group">
-      <i class="fa fa-arrow-left pull-left" (click)="hideSearch()"></i> 
-      <input type="text" class="form-control" placeholder="Search" />
-    </div>    
-     
+<div id="navHeaderDiv" *ngIf="nav.visible" >
+  <nav class="navbar navbar-light fixed-top" style="background-color: #0069d9;color: #fff;">
+    <a class="navbar-brand" href=""><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNsXkRFoepPBBNxAaGjL1OBGToTpqN22KQpwVr1ONcF2K7icPYxg" width="30" height="30" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   
-    <div class="csNavBarHeader" style="background-color: white">
-    <nav class="navbar navbar-expand-lg">
-      <button class="navbar-toggler headerFilterCategory" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>Filter By Category
-      </button>
-      <button class="navbar-toggler headerFilterAll" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>All
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          
-          <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/ContentView']">
-                  <span class="csNavFont">Content View</span>
-              </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav mr-auto ">
+          <li *ngFor="let category of categories" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarCategoryMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{category?.categoryName}}
+            </a>
+            <div *ngFor="let subCategory of category.subCategories" class="dropdown-menu" aria-labelledby="navbarCategoryMenuLink">
+              <a *ngFor="let subCategory of category.subCategories" class="dropdown-item" [routerLink]="['/ContentView']">{{subCategory.subCategoryName}}</a>
+            </div>
           </li>
-            
-        </ul>     
-      </div>
-      </nav>
-</div>
+        </ul>
+      
+    </div>
+  </nav>
 </div>
