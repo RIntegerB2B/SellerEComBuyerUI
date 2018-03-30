@@ -80,7 +80,7 @@ export class ContentDetailComponent implements OnInit {
   }
 
   shareContent(selectedMainContentId){
-    this.facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + "http://ec2-35-154-51-87.ap-south-1.compute.amazonaws.com/SubContent/5aa10e5eabf4646d0f258c0a";
+    this.facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + "http://ec2-13-127-137-140.ap-south-1.compute.amazonaws.com/SubContent/5aa1asdasdfgg435235gf4646d0f258c0a";
     window.location.href=this.facebookShareUrl;
   }
 
